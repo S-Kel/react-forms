@@ -1,0 +1,93 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin-bottom: 1%;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 500px;
+    text-align: center;
+    border: 1px solid #b5b8bd;
+    -webkit-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
+    box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
+    /* border-radius:  */
+}
+
+.form-container .active {
+    background: #8ff1e1;
+    /* margin: 10px auto; */
+    padding: 10px;
+}
+
+.form-container .form-field {
+    position: relative;
+}
+
+.form-container h1 {
+    /* border-bottom: 1px solid #b5b8bd; */
+    margin: 20px 10px 20px 10px;
+}
+
+.form-container label {}
+
+.form-container input {
+    width: 50%;
+    padding: 5px 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.form-container button {
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
+    color: white;
+    background: teal;
+    /* display: inline-block;
+    background: teal;
+    padding: 3px 10px;
+    color: #fefefe;
+    font-weight: 600; */
+}
+
+.form-container span {
+    color: brown;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.form-container pre {
+    position: relative;
+    margin: 20px auto;
+    width: 70%;
+    text-align: justify;
+    padding: 20px;
+    background: rgb(214, 212, 212);
+}
+
+.form-container .input-field {
+    margin: 10px auto;
+    width: 70%;
+    text-align: justify;
+    padding: 20px;
+    background: rgb(214, 212, 212);
+}
