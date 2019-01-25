@@ -55,8 +55,8 @@ class Confirm extends Component {
   return (
    <Grid>
     <Grid.Column>
-     <Segment inverted style={{textAlign: 'justify'}}>
-      <List divided inverted relaxed>
+     <Segment style={{textAlign: 'justify'}}>
+      <List divided relaxed>
         {/* <form onSubmit={handleSubmit}> */}
           <List.Item>
             <List.Content>

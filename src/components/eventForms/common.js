@@ -13,7 +13,7 @@ const size = 30
 const Circle = styled.i`
   position: absolute;
   top: -10px;
-  right: 40px;
+  right: 46px;
   font-style: normal;
   text-align: center;
   height: ${size}px;

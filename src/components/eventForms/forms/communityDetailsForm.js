@@ -15,9 +15,10 @@ import FormStateToRedux from "../FormStateToRedux";
 import RenderCount from "../common";
 import InputText from "./InputText";
 import SelectInput from "./SelectInput";
+import { countryOptions} from '../countryOptions'
 
 
-const countryOptions = [
+const countryOption = [
   { key: "af", value: "Afghanistan", flag: "af", text: "Afghanistan" }
 ];
 const UserCauseForm = (props) => {
@@ -37,7 +38,13 @@ const UserCauseForm = (props) => {
             <Field name="zipCode" label="Zip/Postal Code" type="text" component={InputText} subscription={{ value: true, active: true, error: true, touched: true }} />
           </div>
           <div className="form-field">
-            <Field name="country" label="Select your Country" type="text" options={countryOptions} component={SelectInput} subscription={{ value: true, active: true, error: true, touched: true }} />
+            <Field 
+                name="country" 
+                label="Select your Country" 
+                type="dropdown" 
+                options={countryOptions} 
+                component={SelectInput} 
+                subscription={{ value: true, active: true, error: true, touched: true }} />
           </div>
 
           <Header sub color="teal" content="Your Network" />
