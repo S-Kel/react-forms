@@ -32,14 +32,14 @@ const UserCauseForm = (props) => {
              <Field name="description" label="Tell us about your event" type="text" rows={10} columns={10} autoHeight component={InputTextArea} subscription={{ value: true, active: true, error: true, touched: true }} />
           </div>
           <div className="form-field"> 
-             <Form.Field>  
+             {/* <Form.Field>   */}
             <Field 
                   name="volunteers" 
                   label="Do you have 6-10 Volunteers?" 
                   type="checkbox"
                   component= {InputCheckBox} 
                   subscription={{ value: true, active: true, error: true, touched: true }} />
-               </Form.Field>  
+               {/* </Form.Field>   */}
           </div>
           
             <div className="form-field">

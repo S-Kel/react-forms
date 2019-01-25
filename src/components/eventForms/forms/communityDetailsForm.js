@@ -15,6 +15,7 @@ import FormStateToRedux from "../FormStateToRedux";
 import RenderCount from "../common";
 import InputText from "./InputText";
 import SelectInput from "./SelectInput";
+import InputCheckBox from "./InputCheckBox";
 import { countryOptions} from '../countryOptions'
 
 
@@ -49,13 +50,14 @@ const UserCauseForm = (props) => {
 
           <Header sub color="teal" content="Your Network" />
           <div className="form-field">
-            <Form.Field>
-              <Label style={{ background: "#fefafa", padding: "15px 10px" }}>
-                Do You have a relationship with your local Council?
-              </Label>
-              <Input name="localCouncil" type="checkBox" component={InputText} subscription={{ value: true, active: true, error: true, touched: true }} />
-              {/* <Checkbox label='Do You have a relationship with your local Council' /> */}
-            </Form.Field>
+            {/* <Form.Field> */}
+               <Field
+                 name="localCouncil"
+                 label="Do You have a relationship with your local Counci?"
+                 type="checkbox"
+                 component={InputCheckBox}
+                 subscription={{ value: true, active: true, error: true, touched: true }} />
+            {/* </Form.Field> */}
           </div>
           <div className="form-field">
             <Field name="council" label="Please enter the Council details" type="text" component={InputText} subscription={{ value: true, active: true, error: true, touched: true }} />

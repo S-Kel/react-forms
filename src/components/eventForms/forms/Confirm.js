@@ -50,90 +50,97 @@ class Confirm extends Component {
           suburb, 
           zipCode, 
           country, 
-          council, 
+          council,
+          localCouncil, 
           keyPeople } = values;
   return (
    <Grid>
     <Grid.Column>
-     <Segment style={{textAlign: 'justify'}}>
-      <List divided relaxed>
+     <Segment inverted style={{textAlign: 'justify'}}>
+      <List divided inverted relaxed>
         {/* <form onSubmit={handleSubmit}> */}
           <List.Item>
             <List.Content>
-              <List.Header>First Name</List.Header>
+              <List.Header style={{color: 'teal'}} >First Name</List.Header>
               {firstName}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Last Name</List.Header>
+              <List.Header style={{color: 'teal'}}>Last Name</List.Header>
               {lastName}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Your Email Address</List.Header>
+              <List.Header style={{color: 'teal'}}>Your Email Address</List.Header>
               {email}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Your Organization Name</List.Header>
+              <List.Header style={{color: 'teal'}}>Your Organization Name</List.Header>
               {organization}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Description of Event</List.Header>
+              <List.Header style={{color: 'teal'}}>Description of Event</List.Header>
               {description}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Do you have 6-10 Volunteers?</List.Header>
+              <List.Header style={{color: 'teal'}}>Do you have 6-10 Volunteers?</List.Header>
               {volunteers && <div>Yes</div>}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>When Would You like to hold Your Event</List.Header>
+              <List.Header style={{color: 'teal'}}>When Would You like to hold Your Event</List.Header>
               {datePicker}
             </List.Content>
            </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Suburb</List.Header>
+              <List.Header style={{color: 'teal'}}>Suburb</List.Header>
               {suburb}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Postal/Zip Code</List.Header>
+              <List.Header style={{color: 'teal'}}>Postal/Zip Code</List.Header>
               {zipCode}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Country</List.Header>
+              <List.Header style={{color: 'teal'}}>Country</List.Header>
               {country}
             </List.Content>
           </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Details of Your Local Council</List.Header>
+              <List.Header style={{color: 'teal'}}>Details of Your Local Council</List.Header>
               {council}
             </List.Content>
           </List.Item>
+         <List.Item>
+          <List.Content>
+           <List.Header style={{ color: 'teal' }}>Do You have a relationship with your local Counci?</List.Header>
+           {localCouncil && (<div>Yes</div>)}
+          </List.Content>
+         </List.Item>
           <List.Item>
             <List.Content>
-              <List.Header>Key People Within Your Organization</List.Header>
+              <List.Header style={{color: 'teal'}}>Key People Within Your Organization</List.Header>
               {keyPeople}
             </List.Content>
           </List.Item>
         {/* </form> */}
       </List>
       <br />
-   <Button label="Confirm" primary style={styles.button} disabled={submitting || pristine} onClick={this.confirmSubmit} />
+      <Button label="Confirm" primary style={styles.button} disabled={submitting || pristine} onClick={this.confirmSubmit} />
       <Button label="Back" primary={false} style={styles.button} onClick={this.back} />
     </Segment>
    </Grid.Column>
