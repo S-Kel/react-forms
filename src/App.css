@@ -23,7 +23,7 @@
     padding: 2rem;
     width: 500px;
     text-align: center;
-    border: 1px solid #b5b8bd;
+    /* border: 1px solid #b5b8bd; */
     -webkit-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
     -moz-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
     box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);

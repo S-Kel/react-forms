@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import EventForms from './components/eventForms/EventForm';
 
-import ReactFinalForm from "./components/reactFinalForm";
+// import ReactFinalForm from "./components/reactFinalForm";
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 export const showResults = async values =>{
@@ -16,8 +17,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">          
+          <h1>Hello world</h1>
         </header>
-        <ReactFinalForm/>
+        <EventForms />
       </div>
     );
   }

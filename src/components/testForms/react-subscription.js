@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Field, FormSpy } from "react-final-form";
 // import { Field } from "react-final-form-html5-validation";
 
-import { showResults } from '../App';
+import { showResults } from '../../App';
 import RenderCount from "./common";
 const required = value => (value ? undefined : 'Required');
 const InputText = ({ input, meta, placeholder }) => {

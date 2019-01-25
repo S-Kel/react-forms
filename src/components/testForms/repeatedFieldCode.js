@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Field } from "react-final-form";
 
-import { showResults } from '../App';
+import { showResults } from '../../App';
 
 const required = value => (value ? undefined : 'Required');
 

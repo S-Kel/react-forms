@@ -3,9 +3,9 @@ import { Form, Field, FormSpy } from "react-final-form";
 // import { Field } from "react-final-form-html5-validation";
 import createDecorator from "final-form-focus";
 
-import {showResults} from '../App';
-import RenderCount from "./common";
-import validate from "./validates";
+import {showResults} from '../../App';
+import RenderCount from "../eventForms/common";
+import validate from "../eventForms/validates";
 // import Styles from "./styles";
 
 const required = value => (value ? undefined : 'Required');
@@ -40,7 +40,6 @@ const ReactFinalForm = () => (
               name="firstName"              
               label="First Name"
               type='text'
-              // validate={required}
               component={InputText}
               subscription={{
               value: true,
@@ -55,7 +54,6 @@ const ReactFinalForm = () => (
              name="lastName"
              label="Last Name"
              type='text'
-             // validate={required}
              component={InputText}
              subscription={{
              value: true,
@@ -70,7 +68,6 @@ const ReactFinalForm = () => (
             name="email"
             label="Email Addr"
             type='email'
-            // validate={required}
             component={InputText}
             subscription={{
             value: true,
