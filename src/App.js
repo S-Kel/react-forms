@@ -14,14 +14,14 @@ export const showResults = async values =>{
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">          
+    return <div className="App">
+        <header className="App-header">
           <h1>Hello world</h1>
         </header>
-        <EventForms />
-      </div>
-    );
+        <EventForms>
+          
+        </EventForms>
+      </div>;
   }
 }
 

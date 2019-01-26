@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
  Grid,
  List,
@@ -12,8 +13,11 @@ import {
  Input
 } from 'semantic-ui-react';
 import { Field, FormSpy } from "react-final-form";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
+import "../../../App.css";
 import FormStateFromRedux from "../FormStateFromRedux";
-import { connect } from "react-redux";
+
 import { getFormState } from "../../../store/reducers/finalFormReducer";
 import { showResults } from "../../../App";
 
@@ -33,12 +37,15 @@ class Confirm extends Component {
  render() {
   console.log('Hellow from Confirm Form');
   // console.log(JSON.stringify(this.props.state, 0, 2));
-  const {
+  const {      
      values,
       handleSubmit, 
       pristine, 
       submitting 
   } = this.props.state;
+   const { step} = this.props;
+   console.log('From User Details form STEP:/......', step)
+
   if (!values) return null;
   const { firstName, 
           lastName, 
@@ -53,103 +60,132 @@ class Confirm extends Component {
           council,
           localCouncil, 
           keyPeople } = values;
-  return (
-   <Grid>
-    <Grid.Column>
-     <Segment inverted style={{textAlign: 'justify'}}>
-      <List divided inverted relaxed>
-        {/* <form onSubmit={handleSubmit}> */}
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}} >First Name</List.Header>
-              {firstName}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Last Name</List.Header>
-              {lastName}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Your Email Address</List.Header>
-              {email}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Your Organization Name</List.Header>
-              {organization}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Description of Event</List.Header>
-              {description}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Do you have 6-10 Volunteers?</List.Header>
-              {volunteers && <div>Yes</div>}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>When Would You like to hold Your Event</List.Header>
-              {datePicker}
-            </List.Content>
-           </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Suburb</List.Header>
-              {suburb}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Postal/Zip Code</List.Header>
-              {zipCode}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Country</List.Header>
-              {country}
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Details of Your Local Council</List.Header>
-              {council}
-            </List.Content>
-          </List.Item>
-         <List.Item>
-          <List.Content>
-           <List.Header style={{ color: 'teal' }}>Do You have a relationship with your local Counci?</List.Header>
-           {localCouncil && (<div>Yes</div>)}
-          </List.Content>
-         </List.Item>
-          <List.Item>
-            <List.Content>
-              <List.Header style={{color: 'teal'}}>Key People Within Your Organization</List.Header>
-              {keyPeople}
-            </List.Content>
-          </List.Item>
-        {/* </form> */}
-      </List>
-      <br />
-      <Button label="Confirm" primary style={styles.button} disabled={submitting || pristine} onClick={this.confirmSubmit} />
-      <Button label="Back" primary={false} style={styles.button} onClick={this.back} />
-    </Segment>
-   </Grid.Column>
-  </Grid>
-    
-  );
+  return <TransitionGroup className="card-container">
+      <CSSTransition key={`ABXC-AX${step}`} timeout={4500} classNames="slide">
+        <Grid>
+          <Grid.Column>
+            <form onSubmit={handleSubmit}>
+              <Segment inverted style={{ textAlign: "justify" }}>
+                <List divided inverted relaxed>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        First Name
+                      </List.Header>
+                      {firstName}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Last Name
+                      </List.Header>
+                      {lastName}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Your Email Address
+                      </List.Header>
+                      {email}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Your Organization Name
+                      </List.Header>
+                      {organization}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Description of Event
+                      </List.Header>
+                      {description}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Do you have 6-10 Volunteers?
+                      </List.Header>
+                      {volunteers && <div>Yes</div>}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        When Would You like to hold Your Event?
+                      </List.Header>
+                      {datePicker}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Suburb
+                      </List.Header>
+                      {suburb}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Postal/Zip Code
+                      </List.Header>
+                      {zipCode}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Country
+                      </List.Header>
+                      {country}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Do You have a relationship with your local Counci?
+                      </List.Header>
+                      {localCouncil && <div>Yes</div>}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Details of Your Local Council
+                      </List.Header>
+                      {council}
+                    </List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Content>
+                      <List.Header style={{ color: "teal" }}>
+                        Key People Within Your Organization
+                      </List.Header>
+                      {keyPeople}
+                    </List.Content>
+                  </List.Item>
+                </List>
+                <br />
+                <Button label="Confirm" primary style={styles.button} onClick={this.confirmSubmit} />
+                <Button label="Back" primary={false} style={styles.button} onClick={this.back} />
+              </Segment>
+            </form>
+          </Grid.Column>
+        </Grid>
+      </CSSTransition>
+    </TransitionGroup>;
  }
 
 }
+
+// 
 
 const styles = {
  button: { margin: 15 }

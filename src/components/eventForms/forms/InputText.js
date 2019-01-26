@@ -1,6 +1,6 @@
 import React from 'react'
 import RenderCount from "../common";
-import { Label,Input} from 'semantic-ui-react';
+import { Form, Label,Input} from 'semantic-ui-react';
 
 const InputText = (props) => {
    const { label, type, input, meta: { active, error, touched } } = props;
@@ -8,9 +8,13 @@ const InputText = (props) => {
       <div style={{margin: '10px'}}>
          <RenderCount />
          <div className={active ? "active" : ""}>
-               <Label>{label} </Label>
-               <Input {...input} type={type} placeholder={label}/>
-               {error && touched && <span>{error}</span>}
+            <Form.Input 
+               label={label}
+               type={type}
+               placeholder={label}
+               {...input} 
+            />
+            {error && touched && <span>{error}</span>}
          </div>
       </div>
  );

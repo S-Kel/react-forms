@@ -91,3 +91,85 @@
     padding: 20px;
     background: rgb(214, 212, 212);
 }
+
+
+/* appear - on page load */
+
+.fade-appear {
+    opacity: 0;
+    z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+
+/* enter */
+
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 5000ms ease-out 5000ms;
+}
+
+
+/* exit */
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 5000ms ease-in;
+}
+
+.fade-exit-done {
+    opacity: 0;
+}
+
+
+/* slide enter */
+
+.slide-enter {
+    opacity: 0;
+    transform: scale(0.97) translateX(-100%);
+    z-index: 1;
+}
+
+.slide-enter.slide-enter-active {
+    opacity: 1;
+    transform: scale(1) translateX(5px);
+    transition: opacity 3000ms ease-in 1000ms, transform 3000ms ease-in-out 1000ms;
+}
+
+
+/* slide exit */
+
+.slide-exit {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+.slide-exit.slide-exit-active {
+    opacity: 0;
+    transform: scale(0.97) translateX(100%);
+    transition: opacity 1500ms linear, transform 1500ms ease-out;
+}
+
+.slide-exit-done {
+    opacity: 0;
+}
+
+.card-container {
+    position: relative;
+    /* max-width: 226px; */
+    margin: 0 auto;
+    background: yellow;
+}

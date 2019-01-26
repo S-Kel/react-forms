@@ -245,4 +245,9 @@ const options =
     { text: 'Zimbabwe', value: 'ZW' }
   ];
 
-export const countryOptions = options.map(x=>{return {text: x.text, value: x.text, code: x.value}})
+export const countryOptions = options.map(country => ({
+         key:   country.value,
+         text:  country.text,
+         value: country.text
+       })
+);
