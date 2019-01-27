@@ -25,9 +25,7 @@ import InputCheckBox from "./InputCheckBox";
 const UserCauseForm = (props) => {
  const { handleSubmit, pristine, submitting, nextStep,prevStep, step } = props;
  console.log('From User Details form STEP:/......', step)
- return(    
-    <TransitionGroup className="card-container">
-      <CSSTransition key={`ABXC-AX${step}`} timeout={4500} classNames="slide" >       
+ return(       
         <Grid>
           <Grid.Column as={Form}>
             <Segment>
@@ -35,7 +33,7 @@ const UserCauseForm = (props) => {
               {/* <form onSubmit={handleSubmit}> */}
                 <FormStateToRedux form="causeForm" />
                 <div className="form-field">
-                  <Field name="description" label="Tell us about your event" type="text" rows={10} columns={10} autoHeight component={InputTextArea} subscription={{ value: true, active: true, error: true, touched: true }} />
+                  <Field name="description" label="Tell us about your event" type="text" rows={5} columns={10} autoHeight component={InputTextArea} subscription={{ value: true, active: true, error: true, touched: true }} />
                 </div>
                 <div className="form-field"> 
                   {/* <Form.Field>   */}
@@ -49,7 +47,7 @@ const UserCauseForm = (props) => {
                 </div>
                 
                   <div className="form-field">
-                    <Form.Field>     
+                    {/* <Form.Field>      */}
                     <Label
                       style={{ background: "#fefafa", padding: "15px 10px" }}>
                       Select Expected time or season
@@ -62,7 +60,7 @@ const UserCauseForm = (props) => {
                         placeholder="Select your Target"
                         component={DatePicker}
                         subscription={{ value: true, active: true, error: true, touched: true }} />
-                      </Form.Field>
+                      {/* </Form.Field> */}
                   </div>
 
                 <div className="form-field">
@@ -86,8 +84,6 @@ const UserCauseForm = (props) => {
             </Segment>
           </Grid.Column>     
       </Grid>
-    </CSSTransition>
-  </TransitionGroup>
   );
 }
 

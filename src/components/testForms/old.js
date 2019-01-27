@@ -154,3 +154,44 @@ export default ReactFinalForm;
           </Segment>
      );
 }
+
+{/* <SlideTransition key={`ABXC-AX${1}`} in={step === 1} appear={true} duration={5000} classNames='slide'>
+        <div className='box-container'>
+          <CommunityDetailsForm step={step} nextStep={nextStep} prevStep={prevStep} />
+        </div>
+      </SlideTransition>
+      <SlideTransition key={`ABXC-AX${2}`} in={step === 2} duration={5000} classNames='slide'>
+        <div className='box-container'>
+            <CommunityDetailsForm step={step} nextStep={nextStep} prevStep={prevStep} />
+        </div>
+       </SlideTransition>
+      <SlideTransition key={`ABXC-AX${3}`} in={step === 3} duration={5000} classNames='slide'>
+          <div className='card-container'>
+            <ConfirmDetailsForm form="userForm" step={step} nextStep={nextStep} prevStep={prevStep} />
+        </div>
+       </SlideTransition> */}
+
+{/* <CSSTransition key={`ABXC-AX${step}`} in={true} appear={true} exit={true} timeout={500} classNames="slide">
+      {
+           (step === 1 && <CreateCauseForm step={step} nextStep={nextStep} prevStep={prevStep} />)
+        || (step === 2 && <CommunityDetailsForm step={step} nextStep={nextStep} prevStep={prevStep} />)
+        || (step === 3 && <ConfirmDetailsForm form="userForm" step={step} nextStep={nextStep} prevStep={prevStep} />)
+        || <div />
+      }
+      </CSSTransition> */}
+      
+<SlideTransition isOpen={step === 1} duration={5000} classNames="slide">
+     <div className='box-container'>
+          <CreateCauseForm step={step} nextStep={nextStep} prevStep={prevStep} />
+     </div>
+</SlideTransition>
+     <SlideTransition isOpen={step === 2} duration={5000}>
+          <div className='box-container'>
+               <CommunityDetailsForm step={step} nextStep={nextStep} prevStep={prevStep} />
+          </div>
+     </SlideTransition>
+     <SlideTransition isOpen={step === 3} duration={5000}>
+          <div className='card-container'>
+               <ConfirmDetailsForm form="userForm" step={step} nextStep={nextStep} prevStep={prevStep} />
+          </div>
+     </SlideTransition>

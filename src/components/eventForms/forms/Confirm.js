@@ -60,8 +60,7 @@ class Confirm extends Component {
           council,
           localCouncil, 
           keyPeople } = values;
-  return <TransitionGroup className="card-container">
-      <CSSTransition key={`ABXC-AX${step}`} timeout={4500} classNames="slide">
+  return (
         <Grid>
           <Grid.Column>
             <form onSubmit={handleSubmit}>
@@ -179,10 +178,9 @@ class Confirm extends Component {
             </form>
           </Grid.Column>
         </Grid>
-      </CSSTransition>
-    </TransitionGroup>;
+    )
  }
-
+// key={`ABXC-AX${step}`}
 }
 
 // 

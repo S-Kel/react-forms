@@ -23,14 +23,14 @@ export class EventForm extends Component {
   }
   prevStep = () => {
     const { step } = this.state;
-    this.setState({ step: step - 1 || 0 });
+    if(step < 1)  this.setState({ step: 0 });
+    else this.setState({ step: step - 1 });
   }
   render() {
     console.log('Checking Props inside Form', this.props);
     return (
       <div className="form-container">
         <h1>🏁 React Final Form</h1>
-        <h2>Redux Example</h2>
         <Form 
               onSubmit={showResults} 
               decorators={[focusOnError]} 
@@ -43,7 +43,7 @@ export class EventForm extends Component {
               render={CollectUserDetailsForm}
         />
         <h3>Final-form @finalformjs</h3>
-        <FormStateFromRedux form="userForm" />
+        {/* <FormStateFromRedux form="userForm" /> */}
       </div>
     );    
   }

@@ -1,0 +1,13 @@
+/* `-appear` and all other extensions is added by CSSTransition component */
+
+.slide-appear {}
+
+.slide-appear.slide-appear-active {}
+
+.slide-enter {}
+
+.slide-enter.slide-enter-active {}
+
+.slide-exit {}
+
+.slide-exit-active {}

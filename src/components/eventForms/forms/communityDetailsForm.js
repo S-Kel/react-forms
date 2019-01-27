@@ -29,8 +29,7 @@ const UserCauseForm = (props) => {
   const { handleSubmit, pristine, submitting, nextStep, prevStep, step } = props;
   console.log('From User Details form STEP:/......', step)
 
- return <TransitionGroup className="card-container">
-     <CSSTransition key={`ABXC-AX${step}`} timeout={4500} classNames="slide">
+ return (
        <Grid>
          <Grid.Column as={Form}>
            <Segment>
@@ -79,8 +78,7 @@ const UserCauseForm = (props) => {
            </Segment>
          </Grid.Column>
        </Grid>
-     </CSSTransition>
-   </TransitionGroup>;
+  );
 }
 
 export default UserCauseForm;

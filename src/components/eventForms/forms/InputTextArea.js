@@ -13,12 +13,11 @@ const InputTextArea = (props) => {
  } = props;
   return <div>
       <RenderCount />
-      {/* <Label>{label}</Label> */}
       <div className={active ? "active" : ""}>
         <Form.TextArea 
             label={label}
             type={type} 
-            // style={{padding: '15px',width: '392px', margin: '10px auto'}} 
+            style={{padding: '15px',width: '392px', margin: '10px auto'}} 
             rows={rows} 
             placeholder={label} 
             {...input} 
