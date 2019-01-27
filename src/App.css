@@ -21,14 +21,15 @@
 .form-container {
     margin: 0 auto;
     padding: 2rem;
-    width: 500px;
+    width: 40vw;
     min-height: 80vh;
     text-align: center;
-    /* border: 1px solid #b5b8bd; */
-    -webkit-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
-    -moz-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
-    box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
     overflow: hidden;
+    opacity: .97;
+    /* border: 1px solid #b5b8bd; */
+    /* -webkit-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59);
+    box-shadow: 0px 9px 23px -6px rgba(0, 0, 0, 0.59); */
     /* border-radius:  */
 }
 
@@ -64,11 +65,6 @@
     font-size: 16px;
     color: white;
     background: teal;
-    /* display: inline-block;
-    background: teal;
-    padding: 3px 10px;
-    color: #fefefe;
-    font-weight: 600; */
 }
 
 .form-container span {
@@ -116,8 +112,8 @@
 }
 
 .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 5000ms linear 5000ms;
+    opacity: .97;
+    transition: opacity 5000ms ease-in-out 5000ms;
 }
 
 
@@ -141,53 +137,37 @@
 
 .card-container {
     position: relative;
-    /* max-width: 100%; */
-    /* min-height: 50vh; */
+    /* max-width: 40vw; */
+    max-width: 100%;
+    min-height: 50vh;
     margin: 0 auto;
-    /* background: yellow; */
 }
 
 
-/* 
-=============================================
- CSS ANIMATION SLIDE ENTER 
-============================================= 
-*/
-
-
-/*Start Enter State*/
+/* ENTER TRANSITION */
 
 .slide-enter {
     position: absolute;
-    opacity: 0;
-    transform: scale(.37) translate3d(-100%, 0, 0);
-    z-index: 1;
+    opacity: 0.0;
+    transform: scale(.57) translate3d(-100%, 0, 0);
+    z-index: -11;
 }
-
-
-/* End enter state  */
 
 .slide-enter.slide-enter-active {
-    opacity: 1;
-    transform: scale(1) translateX(0%);
-    transition: all 0.5s ease-in;
+    opacity: .5;
+    transform: scale(1) translate3D(0, 0, 0);
+    transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
     color: red;
 }
-
-
-/* End enter done state  */
 
 .slide-enter-done {
-    transform: translateY(0%);
+    opacity: .87;
+    transform: scale(1.0) translate3D(0, 0, 0);
     color: red;
 }
 
 
-/* 
-=============================================
- CSS ANIMATION SLIDE EXIT
-============================================= 
-*/
+/* EXIT TRANSITION */
 
 .slide-exit {
     transform: scale(1) translate3d(0, 0, 0);
@@ -195,60 +175,17 @@
 
 .slide-exit.slide-exit-active {
     opacity: 0;
-    transform: scale(.37) translate3d(100%, -10%, 0);
-    transition: all 0.5s ease-in;
+    transform: scale(.57) translate3d(100%, 0, 0);
+    transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    /* transition-timing-function: */
 }
 
 .slide-exit-done {
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(200%, 0, 0);
     color: red;
 }
 
 .box-container {
     display: flex;
     flex-direction: column;
-    /* max-width: 54em;
-    min-width: 21em; */
-    /* box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
-    border-radius: 6px;
-    padding: 24px; */
 }
-
-
-/* ENTER TRANSITION */
-
-
-/* Declare transition start properties*/
-
-
-/* 
-.slide-enter {
-    transform: translateX(-100vw);
-    opacity: 0;
-    position: absolute;
-} */
-
-
-/* Declare transition properties */
-
-
-/* .slide-enter.slide-enter-active {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 300ms linear 300ms;
-} */
-
-
-/* EXIT TRANSITION */
-
-
-/* .slide-exit {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.slide-exit.slide-exit-active {
-    transform: translateX(100vw);
-    opacity: 0;
-    transition: all 300ms linear
-} */

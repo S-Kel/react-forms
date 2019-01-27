@@ -17,8 +17,7 @@ const InputTextArea = (props) => {
         <Form.TextArea 
             label={label}
             type={type} 
-            style={{padding: '15px',width: '392px', margin: '10px auto'}} 
-            rows={rows} 
+            rows={rows}
             placeholder={label} 
             {...input} 
             />

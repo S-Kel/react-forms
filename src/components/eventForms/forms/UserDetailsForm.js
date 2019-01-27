@@ -95,12 +95,11 @@ const CollectUserDetailsForm = (props) => {
               <ConfirmDetailsForm form="userForm" step={step} nextStep={nextStep} prevStep={prevStep} />
             </div>
           </CSSTransition>)
-          || <div className='box-container' />
+      || null
       
       }
       </TransitionGroup>     
   </div>)
-    {/* </CSSTransition>; */}
 }
 
 export default CollectUserDetailsForm;
