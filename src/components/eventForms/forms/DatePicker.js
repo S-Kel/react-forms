@@ -15,7 +15,8 @@ const DatePicker = (props) => {
  const {icon, input, iconPosition, label, type, meta: { active, error, touched }} = props;
     return (
      <div className={active ? "active" : ""}>      
-      <Form.Input {...input} 
+      <Form.Input 
+        {...input} 
         type={type} 
         iconPosition={iconPosition} 
         icon={icon} 

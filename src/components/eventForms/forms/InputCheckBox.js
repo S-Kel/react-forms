@@ -5,11 +5,11 @@ const InputCheckBox = (props) => {
  const { input: { value, onChange, ...input }, label, type, meta: { active, error, touched }} = props;
  return (
    <div className={active ? "active" : ""}>
-     <Form.Checkbox         
+     <Form.Checkbox 
+        {...input}          
         label={label} 
         type={type}
-        onChange={(e, data) => onChange(data.checked)}    
-        {...input}    
+        onChange={(e, data) => onChange(data.checked)}           
      />
      {error && touched && <span>{error}</span>}
    </div>);

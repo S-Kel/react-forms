@@ -15,11 +15,11 @@ const InputTextArea = (props) => {
       <RenderCount />
       <div className={active ? "active" : ""}>
         <Form.TextArea 
+            {...input} 
             label={label}
             type={type} 
             rows={rows}
-            placeholder={label} 
-            {...input} 
+            placeholder={label}             
             />
         {error && touched && <span>{error}</span>}
       </div>

@@ -37,8 +37,9 @@ class Confirm extends Component {
  render() {
   console.log('Hellow from Confirm Form');
   // console.log(JSON.stringify(this.props.state, 0, 2));
+  const {values} = this.props;
   const {      
-     values,
+    //  values,
       handleSubmit, 
       pristine, 
       submitting 

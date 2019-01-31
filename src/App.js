@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import EventForms from './components/eventForms/EventForm';
+import CreateEventForms from "./components/events/CreateEventForm";
 
 // import ReactFinalForm from "./components/reactFinalForm";
 
@@ -18,9 +19,8 @@ class App extends Component {
         <header className="App-header">
           <h1>Hello world</h1>
         </header>
-        <EventForms>
-          
-        </EventForms>
+        <EventForms />          
+        {/* <CreateEventForms /> */}
       </div>;
   }
 }

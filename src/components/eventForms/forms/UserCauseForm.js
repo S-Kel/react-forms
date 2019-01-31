@@ -33,7 +33,12 @@ const UserCauseForm = (props) => {
               {/* <form onSubmit={handleSubmit}> */}
                 <FormStateToRedux form="causeForm" />
                 <div className="form-field">
-                  <Field name="description" label="Tell us about your event" type="text" rows={5} columns={10} autoHeight component={InputTextArea} subscription={{ value: true, active: true, error: true, touched: true }} />
+                  <Field 
+                  name="description" 
+                  label="Tell us about your event" 
+                  type="text" rows={5} columns={10} 
+                  autoHeight component={InputTextArea} 
+                  subscription={{ value: true, active: true, error: true, touched: true }} />
                 </div>
                 <div className="form-field"> 
                   {/* <Form.Field>   */}
